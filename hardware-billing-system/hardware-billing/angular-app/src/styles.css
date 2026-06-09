@@ -1,0 +1,45 @@
+/* src/styles.css - Global Styles for HardwareStore Pro */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #1a1a2e;
+  background: #f0f2f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* Focus ring */
+*:focus-visible { outline: 2px solid #f59e0b; outline-offset: 2px; }
+
+/* Print styles */
+@media print {
+  .sidebar, .topbar, .btn-new-bill { display: none !important; }
+  .content-area { padding: 0 !important; }
+  .main-content { width: 100% !important; }
+}
+
+/* Utility */
+.text-muted { color: #64748b; }
+.text-success { color: #16a34a; }
+.text-danger { color: #dc2626; }
+.fw-bold { font-weight: 700; }
+
+/* Angular route transition */
+router-outlet + * {
+  animation: fadeIn 0.18s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
